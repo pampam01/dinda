@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Pengertian dan Contoh dari Critical Section | Dindaaa.blog</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.css">  
+   <link rel="stylesheet" href="css/main.css">
+        
+
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/DindaLogo.ico" type="image/x-icon">
+	<link rel="icon" href="images/DindaLogo.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header class="short-header">   
+
+    <div class="gradient-block"></div>	
+
+    <div class="row header-content">
+
+        <div class="logo">
+          <a href="index.html">Author</a>
+          
+       </div>
+
+        <nav id="main-nav-wrap">
+             <ul class="main-navigation sf-menu">
+                 <li><a href="index.html" title="">Home</a></li>									
+                 <li class="has-children">
+                     <a href="category.html" title="">Categories</a>
+                     <ul class="sub-menu">
+                     <li><a href="category-sejarah.html">Sejarah</a></li>
+                     <li><a href="category-pengertian-dan-contoh.html">Pengertian dan Contoh</a></li>
+                     <!--<li><a href="category.html">Photography</a></li>
+                     <li><a href="category.html">UI</a></li>
+                     <li><a href="category.html">Mockups</a></li>
+                     <li><a href="category.html">Branding</a></li>-->
+                  </ul>
+                 </li>
+                 <li class="has-children current">
+                     <a href="blog.html" title="">Blog</a>
+                     <ul class="sub-menu">
+                     <li><a href="tugas1.html">Tugas 1</a></li>
+                     <li><a href="tugas2.html">Tugas 2</a></li>
+                     <!--<li><a href="single-gallery.html">Gallery Post</a></li>
+                     <li><a href="single-standard.html">Standard Post</a></li>-->
+                  </ul>
+                 </li>
+                 <!--<li><a href="style-guide.html" title="">Styles</a></li>-->
+                 <li><a href="about.html" title="">About</a></li>	
+                 <li><a href="contact.html" title="">Contact</a></li>										
+             </ul>
+         </nav> <!-- end main-nav-wrap -->
+
+         <div class="search-wrap">
+             
+             <form role="search" method="get" class="search-form" action="#">
+                 <label>
+                     <span class="hide-content">Search for:</span>
+                     <input type="search" class="search-field" placeholder="Type Your Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                 </label>
+                 <input type="submit" class="search-submit" value="Search">
+             </form>
+
+             <a href="#" id="close-search" class="close-btn">Close</a>
+
+         </div> <!-- end search wrap -->	
+
+         <div class="triggers">
+             <a class="search-trigger" href="#"><i class="fa fa-search"></i></a>
+             <a class="menu-toggle" href="#"><span>Menu</span></a>
+         </div> <!-- end triggers -->	
+        
+    </div>     		
+    
+</header> <!-- end header -->
+   
+
+   <!-- content
+   ================================================== -->
+   <section id="content-wrap" class="blog-single">
+   	<div class="row">
+   		<div class="col-twelve">
+
+   			<article class="format-standard">  
+
+   				<div class="content-media">
+						<div class="post-thumb">
+							<img src="images/criticals.jpeg" style="display: block; margin: auto; width: 300px;"> 
+						</div>  
+					</div>
+
+					<div class="primary-content">
+
+						<h1 class="page-title">Pengertian dan Contoh dari Critical Section</h1>	
+
+						<ul class="entry-meta">
+                            <li class="name">Dinda Putri Ramadani (8020220216)</li>
+							<li class="date">12 Oktober 2023</li>						
+							<li class="cat"><a href="tugas2.html">Tugas 2</a><a href="category-pengertian-dan-contoh.html">Pengertian dan Contoh</a></li>				
+						</ul>						
+ 
+
+						<p style="text-align: justify;"> <mark style="background-color: pink;"">Critical Section adalah</mark> bagian dari suatu proses yang akan melakukan akses dan manipulasi data ketika sebuah proses sedang dijalankan dalam critical section nya, tidak ada proses lain yang boleh dijalankan dalam critical section tersebut, karena akan menyebabkan keadaan mutually exclusive. Mutually exclusive yakni keadaan terjadinya akses resources yang sama di saat yang bersamaan mutually exclusive memerlukan kondisi tertentu agar dapat terpenuhi.
+                        </p>
+
+						<P style="text-align: justify;">Critical section biasanya digunakan saat program multithreading, dimana program tersebut terdiri dari banyak thread, akan mengubah nilai dari variabel. Dalam hal ini critical sectiondiperlukan untuk melindungi variabel dari concurrent access (pengaksesan program di saat yang bersamaan) yang dapat membuat nilai dari variabel tersebut menjadi tidak konsisten.
+						</p>
+                        <P style="text-align: justify;">Seperti yang telah kita ketahui bahwa proses dapat bekerja sendiri (independent process) dan juga dapat bekerja bersama proses-proses yang lain (cooperating process). Pada umumnya ketika proses saling bekerjasama (cooperating process) maka proses-proses tersebut akan saling berbagi data. Pada saat proses-proses berbagi data, ada kemungkinan bahwa data yang dibagi secara bersama itu akan menjadi tidak konsisten dikarenakan adanya kemungkinan proses-proses tersebut melakukan akses secara bersamaan yang menyebabkan data tersebut berubah, hal ini dikenal dengan istilah Race Condition.
+						</p>
+
+                        <P style="text-align: justify;">Dibutuhkan solusi yang tepat untuk menghindari munculnya Race Condition. Solusi tersebut harus memenuhi ketiga syarat berikut:</p>
+                            <ul>
+                                <li>
+                                    <strong>Mutual Exclusion:</strong> Jika proses pi sedang mengeksekusi critical section-nya maka tidak ada proses lain yang dapat mengeksekusi dalam critical section mereka.
+                                </li>
+                                <li>
+                                    <strong>Progress:</strong> Jika tidak ada proses yang sedang dieksekusi dalam critical section  dan ada beberapa proses yang ingin masuk ke critical section mereka, maka pemilihan proses yang akan masuk ke critical section berikutnya tidak bias ditunda.
+                                </li>
+                                <li>
+                                    <strong>Bounded Waiting:</strong> Suatu keterikatan harus ada pada sejumlah proses yang diijinkan masuk ke critical section mereka, setelah adanya proses yang meminta masuk ke critical section dan sebelum  permintaan itu diterima.
+                                </li>
+                            </ul>
+
+                        <P style="text-align: justify;">Critical Section mempunyai beberapa kode:</p>
+                            <img src="images/Criticial-Section-Problem.webp" style="display: block; margin: auto; width: 370px;" >
+                            <ul>
+                                <li>
+                                    <strong>Entry Section:</strong> kode yang digunakan untuk masuk ke dalam critical section
+                                </li>
+                                <li>
+                                    <strong>Critical Section:</strong> Kode di mana hanya ada satu proses yang dapat dieksekusi pada satu waktu.
+                                </li>
+                                <li>
+                                    <strong>Exit Section:</strong> akhir dari critical section, mengizinkan proses lain.
+                                </li>
+                                <li>
+                                    <strong>Remainder Section: </strong> kode istirahat setelah masuk ke critical section.
+                                </li>                               
+                            </ul>
+
+                        <P style="text-align: justify;">Ada dua jenis solusi untuk memecahkan masalah critical section, yaitu: </p>
+                            <ul>
+                                <li>
+                                    <strong>Solusi Perangkat Lunak: </strong>Solusi ini menggunakan algoritma-algoritma untuk mengatasi masalah critical section.
+                                </li>
+                                <li>
+                                    <strong>Solusi Perangkat Keras: </strong>Solusi ini tergantung pada beberapa instruksi mesin tertentu, misalnya dengan me-non-aktifkan interupsi, mengunci suatu variabel tertentu atau menggunakan instruksi level mesin seperti tes dan set.
+                                </li>
+                            </ul>
+                            
+                                
+						
+						
+						<div>  
+                            <p>
+                                Berikut ini algoritma-algoritma yang digunakan untuk mengatasi masalah critical section:
+                            </p>
+                            <ol>
+                                <li>
+                                    <strong>Algoritma 1</strong>
+                                    <p style="text-align: justify;">
+                                        Algoritma 1 memberikan giliran kepada setiap proses untuk memproses critical section-nya secara bergantian. Asumsi yang digunakan disini setiap proses secara bergantian memasuki critical section-nya.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Statement while(turn != 4) akan memeriksa apakah pada saat itu proses 4 mendapatkan turn, jika tidak maka proses 4 akan busy waiting(lihat kembali bahwa printah while diakhiri dengan “;”). Jika ternyata pada saat itu merupakan giliran proses 4 maka proses 4 akan mengerjakan critical section-nya. Sampai sini jelas terlihat bahwa mutex terpenuhi! Proses yang tidak mendapatkan turn tidak akan dapat mengerjakan critical section-nya dan turn hanya akan diberikan pada satu proses saja.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Setelah proses 4 selesai mengerjakan critical section maka turn diberikan pada proses lainnya (turn= j, j merupakan proses selanjutnya yang dapat mengerjakan critical section). Setelah turn-nya diberikan kepada proses lain, proses 4 akan mengerjakan remainder section. Disini jelas terlihat bahwa syarat bounded waiting jelas terpenuhi. Ingat asumsi yang digunakan dalam algoritma ini adalah setiap proses secar bergantian memasuki critical section-nya, jika pada saat itu proses 4 ternyata belum mau mengerjakan critical section-nya maka proses ke-j tidak akan mendapatkan kesempatan untuk mengerjakan critical section walau saat itu sebenarnya proses ke-j akan memasuki critical section. Artinya syarat progress tidak terpenuhi pada algoritma ini.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Pada semua contoh, i adalah proses yang sedang berjalan, j adalah proses yang lain. Pada contoh ini code.
+                                    </p>
+                                    <h3>Contoh</h3>
+                                    <div style="color: rgb(0, 140, 255);">
+                                        <ol style="list-style-type: lower-roman;">
+                                            <li>
+                                                Shared variables
+                                                <ul>
+                                                    <li>
+                                                        int turn
+                                                        <p>
+                                                            initially turn = 0
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        turn = i, <i>Pi can enter its critical section</i>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    Process Pi
+                                                    <pre>
+                                                        <code>
+      do {
+        while(turn!=1);
+        critical section
+        turn=j;
+        remainder section
+       } while(1);
+
+                                                        </code>
+                                                    </pre>
+                                                </p> 
+                                               
+                                            </li>
+                                            <li>
+                                                Memenuhi <i>mutual exclusion</i>, tapi bukan progress.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    
+                                </li>
+                                
+                                <li>
+                                    <strong>Algoritma 2</strong>
+                                    <p style="text-align: justify;">
+                                        Masalah yang terjadi pada algoritma 1 ialah ketika di entry section terdapat sebuah proses yang ingin masuk ke critical section, sementara di critical section sendiri tidak ada proses yang sedang berjalan, tetapi proses yang ada di entry section tadi tidak bisa masuk ke critical section. Hal ini terjadi karena giliran untuk memasuki critical section adalah giliran proses yg lain sementara proses tersebut masih berada di remainder section. Untuk mengatasi masalah ini maka dapat diatasi dengan merubah variabel trun pada algoritma pertama dengan array
+                                    </p>
+                                    <CODE>Boolean flag [2];</CODE> <p></p>
+                                    <p style="text-align: justify;">
+                                        Elemen array diinisialisasi false. Jika flag[i] true, nilai tersebut menandakan bahwa Pi ready untuk memasuki critical section. Pada algoritma ini. hal pertama yang dilakukan ialah mengeset proses Pi dengan nilai True, ini menandakan bahwa Pi ready untuk masuk ke critical section. kemudian, Pi memeriksa apakah Pj tidak ready untuk memasukui critical section. Jika Pj ready, maka Pi menunggu sampai Pj keluar dari critical section (flag[j] bernilai false). Ketika keluar dari critcal section, Pi harus merubah nilai flag[i] menjadi false agar prores lain dapat memasuki critical section.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Contoh: <br>
+                                        Pada algoritma ini, kriteria Mutual-exclusion terpenuhi, tetapi tidak memenuhi kriteria progress. Ilustrasinya seperti di bawah ini.
+                                        <p>
+                                            T0 : Po set flag [0] = true <br>
+                                            T1 : Po set flag [1] = true
+                                        </p>
+                                        Dari ilustrasi diatas terlihat bahwa algoritma ini memungkinkan terjadinya nilai true untuk kedua proses, akibatnya tidak ada proses yang akan berhasil memasuki critical section.Jadi untuk algoritma 2 masih terdapat kelemahan, seperti yang terjadi di atas.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        FLAG untuk setiap proses yang memberi STATE:
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Setiap proses memantau suatu flag yang mengindikasikan ia ingin memasuki critical section. Dia memeriksa flag poses lain dan tidak akan memasuki critical section bila ada proses lain yang sedang masuk.
+                                    </p>
+                                    <h3 style="color: pink;">Contoh</h3>
+                                    <div style="color: rgb(0, 140, 255);">
+                                        <ol style="list-style-type: lower-roman;">
+                                            <li>
+                                                Shared variables
+                                                <ul>
+                                                    <li>
+                                                        boolean flag[2]
+                                                        <p>
+                                                            initially flag [0] = flag [1] = false
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        flag [i] = true <i> Pi ready to enter its critical section
+                                                        </i>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    Process Pi
+                                                    <pre>
+                                                        <code>
+      do {
+        flag[i]:=true;
+        while(turn!=1)
+        critical section;
+        turn=j;
+        remainder section
+       } while(1);
+                                                        </code>
+                                                    </pre>
+                                                </p> 
+                                               
+                                            </li>
+                                            <li>
+                                                Memenuhi <i>mutual exclusion</i>, tapi tidak memenuhi progess.
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <strong>Algortima 3</strong>
+                                    <p style="text-align: justify;">
+                                        Idenya berasal dari algoritma 1 dan 2. Algoritma 3 mengatasi kelemahan pada algoritma 1 dan 2 sehingga progres yang diperlukan untuk mengatasi critical section terpenuhi.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Algoritma 3 ditemukan oleh G.L. Petterson pada tahun 1981 dan dikenal juga sebagai Algoritma Petterson. Petterson menemukan cara yang sederhana untuk mengatur proses agar memenuhi mutual exclusion. Algoritma ini adalah solusi untuk memecahkan masalah critical section pada dua proses. Ide dari algoritma ini adalah menggabungkan variabel yang di- sharing pada Algoritma 1 dan Algoritma 2, yaitu variabel turn dan variabel flag. Sama seperti pada Algoritma 1 dan 2, variabel turn menunjukkan giliran proses mana yang diperbolehkan memasuki critical section dan variabel flag menunjukkan apakah suatu proses membutuhkan akses ke critical section atau tidak.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Awalnya flag untuk kedua proses diinisialisai bernilai false, yang artinya kedua proses tersebut tidak membutuhkan akses ke critical section. Kemudian jika suatu proses ingin memasuki critical section, ia akan mengubah flag-nya menjadi true (memberikan tanda bahwa ia butuh critical section) lalu proses tersebut memberikan turn kepada lawannya. Jika lawannya tidak menginginkan critical section (flag-nya false), maka proses tersebut dapat menggunakan critical section, dan setelah selesai menggunakan critical section ia akan mengubah flag-nya menjadi false. Tetapi apabila proses lawannya juga menginginkan critical section maka proses lawan-lah yang dapat memasuki critical section, dan proses tersebut harus menunggu sampai proses lawan menyelesaikan critical section dan mengubah flag-nya menjadi false.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Misalkan ketika P0 membutuhkan critical section, maka P0 akan mengubah flag[0] = true, lalu P0 mengubah turn= 1. Jika P1 mempunyai flag[1] = false, (berapapun nilai turn) maka P0 yang dapat mengakses critical section. Namun apabila P1 juga membutuhkan critical section, karena flag[1] = true dan turn= 1, maka P1 yang dapat memasuki critical section dan P0 harus menunggu sampai P1 menyelesaikan critical section dan mengubah flag[1] = false, setelah itu barulah P0 dapat mengakses critical section.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Bagaimana bila kedua proses membutuhkan critical section secara bersamaan? Proses mana yang dapat mengakses critical section terlebih dahulu? Apabila kedua proses (P0 dan P1) datang bersamaan, kedua proses akan menset masing-masing flag menjadi true (flag[0] = truedan flag[1] = true), dalam kondisi ini P0 dapat mengubah turn = 1 dan P1 juga dapat mengubah turn = 0. Proses yang dapat mengakses critical section terlebih dahulu adalah proses yang terlebih dahulu mengubah turn menjadi turn lawannya. Misalkan P0 terlebih dahulu mengubah turn= 1, lalu P1 akan mengubah turn= 0, karena turn yang terakhir adalah 0 maka P0-lah yang dapat mengakses critical section terlebih dahulu dan P1 harus menunggu.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Algoritma 3 memenuhi ketiga syarat yang dibutuhkan. Syarat progress dan bounded waitingyang tidak dipenuhi pada Algoritma 1 dan 2 dapat dipenuhi oleh algoritma ini karena ketika ada proses yang ingin mengakses critical section dan tidak ada yang menggunakan critical sectionmaka dapat dipastikan ada proses yang bisa menggunakan critical section, dan proses tidak perlu menunggu selamanya untuk dapat masuk ke critical section.
+                                    </p>
+                                    <p>
+                                        FLAG untuk meminta izin masuk:
+                                        <ul>
+                                            <li>Setiap proses mengeset sebuah flag untuk meminta izin masuk. Lalu setiap proses mentoggle bit untuk mengizinkan yang lain untuk yang pertama</li>
+                                            <li>Kode ini dijalankan untuk setiap proses i lain. Pada contoh ini code.
+                                        <h3 style="color: pink;"><br>Contoh</h3>
+                                    <div style="color: rgb(0, 140, 255);">
+                                        <ol style="list-style-type: lower-roman;">
+                                            <li>
+                                                Shared variables
+                                                <ul>
+                                                    <li>
+                                                        F boolean flag[2];
+                                                        <p>
+                                                            initially flag[0] = flag[1] = false
+                                                        </p>
+                                                        
+                                                    </li>
+                                                    <li>
+                                                        <p>F flag[i] = true; <i>Pi can enter its critical section</i></p>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            
+                                        </ol>
+                                    </div>
+                                                
+                                    
+                                            </li>
+                                            <li>Gabungan shared variables dari algorima 1 dan 2
+                                                <div style="color: rgb(0, 140, 255);">
+                                                    <ul>
+                                                        <li>
+                                                            <p>
+                                                                Process Pi
+                                                                <pre>
+                                                                    <code>
+     do {
+       while(turn!=1);
+       critical section
+       turn=j;
+       remainder section
+     } while(1);
+            
+                                                                    </code>
+                                                                </pre>
+                                                            </p> 
+                                                           
+                                                        </li>
+                                                        <li>
+                                                            Memenuhi ketiga persyaratan, memecahkan persoalan <i>critical section</i> untuk kedua proses
+                                                        </li>
+                                                    
+                                                    </ul>
+                                                </div>   
+                                                
+                                            </ul>
+                                        </p>
+                                    </li>
+                                </p>               
+                                  <li>
+                                    Algoritma Bakery
+                                    <p style="text-align: justify;">
+                                        Critical Section untuk n buah proses:
+                                    </p>
+                                    <p>
+                                        Sebelum memasukkan proses ke critical section, proses menerima sebuah nomor. Pemegang nomor terkecil masuk ke critical section. Jika ada dua proses atau lebih menerima nomor sama, maka proses dengan indeks terkecil yang dilayani terlebih dahulu untuk masuk ke critical section. Skema penomoran selalu naik secara berurut contoh: 1, 2, 3, 3, 3, 3, 4, 5,...
+                                    </p>
+                                    <h3 style="color: pink;"><br>Contoh</h3>
+                                    <div style="color: rgb(0, 140, 255);">
+                                        <pre>
+                                            <code>
+    boolean choosing [n];
+    long long long int number [n];
+    /* 64 bit maybe okay for about 600 years */
+    Array structure elements are initiallized to false and 0 respectively
+    while (true) {
+             choosing[i] = true;
+             number[i] = max(number[0], ... [n-1]) + 1;
+             choosing[i] = false;
+             for (j = 0; j < n; j ++) {
+                while (choosing[j]) {}
+                while ((number[j] !=0) && ((number[j], j) < (number[i], i))) {}
+              }
+              number[i] = 0
+    }
+    Solves the critical-section problem for n process
+
+                                            </code>
+                                        </pre>
+                                    </div>
+                                  </li>              
+                            </ol>                         						
+						</div>
+												
+
+                        <p>
+                           <strong>References:</strong> <br>
+                           <a href="https://teknikkom15.blogspot.com/2012/04/critical-section.html">https://teknikkom15.blogspot.com/2012/04/critical-section.html</a>
+                           <a href="https://muhammdhadi8040170378.blogspot.com/p/critical-section-critical-section.html">https://muhammdhadi8040170378.blogspot.com/p/critical-section-critical-section.html</a>
+                        </p>
+
+						<p class="tags">
+                            
+		  			     	<span>Tagged in :</span>
+                               <a href="tugas2.html">Tugas 2</a><a href="category-pengertian-dan-contoh.html">Pengertian dan Contoh</a><a href="critical-section.html">Critical Section</a>
+		  			   </p>
+
+		  			   <div class="author-profile">
+		  			   	<img src="images/avatars/my pict.jpg" alt="">
+
+		  			   	<div class="about">
+		  			   		<h4><a href="#">Dinda Putri Ramadani</a></h4>
+		  			   	
+		  			   		<p>Hai!!! Perkenalkan saya Dinda Putri Ramadani salah satu mahasiswi dari Universitas Dinamika Bangsa Jambi. Blog ini untuk memenuhi tugas Sistem Operasi yang diberikan oleh dosen pembimbing saya. Terima Kasih!!! xixixi
+                            </p>
+
+		  			   		<ul class="author-social">
+		  			   			
+						        <li><a href="https://instagram.com/dindaaaptrii?igshid=YTQwZjQ0NmI0OA==">Instagram</i></a></li>					        	
+		  			   		</ul>
+		  			   	</div>
+		  			   </div> <!-- end author-profile -->						
+
+					</div> <!-- end entry-primary -->		  			   
+
+	  			   <div class="pagenav group">
+		  			   <div class="prev-nav">
+		  			   	<a href="batch-system.html" rel="prev">
+		  			   		<span>Previous</span>
+		  			   		Pengertian dan Contoh <br>dari Batch System
+		  			   	</a>
+		  			   </div>
+		  				<div class="next-nav">
+		  					<a href="processing-control-block.html" rel="next">
+		  						<span>Next</span>
+		  			   		Pengertian dan Contoh dari <br>Process Control Block
+		  					</a>
+		  				</div>  				   
+	  				</div>
+
+				</article>
+   		
+
+			</div> <!-- end col-twelve -->
+   	</div> <!-- end row -->
+
+        <!--UNTUK TEMPAT TAMPILKAN COMMENT
+		<div class="comments-wrap">
+			<div id="comments" class="row">
+				<div class="col-full">
+
+               <h3>5 Comments</h3>
+
+               <!-- commentlist 
+               <ol class="commentlist">
+
+                  <li class="depth-1">
+
+                     <div class="avatar">
+                        <img width="50" height="50" class="avatar" src="images/avatars/user-01.jpg" alt="">
+                     </div>
+
+                     <div class="comment-content">
+
+	                     <div class="comment-info">
+	                        <cite>Itachi Uchiha</cite>
+
+	                        <div class="comment-meta">
+	                           <time class="comment-time" datetime="2014-07-12T23:05">Jul 12, 2014 @ 23:05</time>
+	                           <span class="sep">/</span><a class="reply" href="#">Reply</a>
+	                        </div>
+	                     </div>
+
+	                     <div class="comment-text">
+	                        <p>Adhuc quaerendum est ne, vis ut harum tantas noluisse, id suas iisque mei. Nec te inani ponderum vulputate,
+	                        facilisi expetenda has et. Iudico dictas scriptorem an vim, ei alia mentitum est, ne has voluptua praesent.</p>
+	                     </div>
+
+	                  </div>
+
+                  </li>
+
+                  <li class="thread-alt depth-1">
+
+                     <div class="avatar">
+                        <img width="50" height="50" class="avatar" src="images/avatars/user-04.jpg" alt="">
+                     </div>
+
+                     <div class="comment-content">
+
+	                     <div class="comment-info">
+	                        <cite>John Doe</cite>
+
+	                        <div class="comment-meta">
+	                           <time class="comment-time" datetime="2014-07-12T24:05">Jul 12, 2014 @ 24:05</time>
+	                           <span class="sep">/</span><a class="reply" href="#">Reply</a>
+	                        </div>
+	                     </div>
+
+	                     <div class="comment-text">
+	                        <p>Sumo euismod dissentiunt ne sit, ad eos iudico qualisque adversarium, tota falli et mei. Esse euismod
+	                        urbanitas ut sed, et duo scaevola pericula splendide. Primis veritus contentiones nec ad, nec et
+	                        tantas semper delicatissimi.</p>                        
+	                     </div>
+
+	                  </div>
+
+                     <ul class="children">
+
+                        <li class="depth-2">
+
+                           <div class="avatar">
+                              <img width="50" height="50" class="avatar" src="images/avatars/user-03.jpg" alt="">
+                           </div>
+
+                           <div class="comment-content">
+
+	                           <div class="comment-info">
+	                              <cite>Kakashi Hatake</cite>
+
+	                              <div class="comment-meta">
+	                                 <time class="comment-time" datetime="2014-07-12T25:05">Jul 12, 2014 @ 25:05</time>
+	                                 <span class="sep">/</span><a class="reply" href="#">Reply</a>
+	                              </div>
+	                           </div>
+
+	                           <div class="comment-text">
+	                              <p>Duis sed odio sit amet nibh vulputate
+	                              cursus a sit amet mauris. Morbi accumsan ipsum velit. Duis sed odio sit amet nibh vulputate
+	                              cursus a sit amet mauris</p>
+	                           </div>
+
+                           </div>
+
+                           <ul class="children">
+
+                              <li class="depth-3">
+
+                                 <div class="avatar">
+                                    <img width="50" height="50" class="avatar" src="images/avatars/user-04.jpg" alt="">
+                                 </div>
+
+                                 <div class="comment-content">
+
+	                                 <div class="comment-info">
+	                                    <cite>John Doe</cite>
+
+	                                    <div class="comment-meta">
+	                                       <time class="comment-time" datetime="2014-07-12T25:15">July 12, 2014 @ 25:15</time>
+	                                       <span class="sep">/</span><a class="reply" href="#">Reply</a>
+	                                    </div>
+	                                 </div>
+
+	                                 <div class="comment-text">
+	                                    <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est
+	                                    etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+	                                 </div>
+
+                                 </div>
+
+                              </li>
+
+                           </ul>
+
+                        </li>
+
+                     </ul>
+
+                  </li>
+
+                  <li class="depth-1">
+
+                     <div class="avatar">
+                        <img width="50" height="50" class="avatar" src="images/avatars/user-02.jpg" alt="">
+                     </div>
+
+                     <div class="comment-content">
+
+	                     <div class="comment-info">
+	                        <cite>Shikamaru Nara</cite>
+
+	                        <div class="comment-meta">
+	                           <time class="comment-time" datetime="2014-07-12T25:15">July 12, 2014 @ 25:15</time>
+	                           <span class="sep">/</span><a class="reply" href="#">Reply</a>
+	                        </div>
+	                     </div>
+
+	                     <div class="comment-text">
+	                        <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
+	                     </div>
+
+                     </div>
+
+                  </li>
+
+               </ol> <!-- Commentlist End -->					
+
+               <!-- respond 
+               <div class="respond">
+
+               	<h3>Leave a Comment</h3>
+
+                  <form name="contactForm" id="contactForm" method="post" action="">
+  					   <fieldset>
+
+                     <div class="form-field">
+  						      <input name="cName" type="text" id="cName" class="full-width" placeholder="Your Name" value="">
+                     </div>
+
+                     <div class="form-field">
+  						      <input name="cEmail" type="text" id="cEmail" class="full-width" placeholder="Your Email" value="">
+                     </div>
+
+                     <div class="form-field">
+  						      <input name="cWebsite" type="text" id="cWebsite" class="full-width" placeholder="Website"  value="">
+                     </div>
+
+                     <div class="message form-field">
+                        <textarea name="cMessage" id="cMessage" class="full-width" placeholder="Your Message" ></textarea>
+                     </div>
+
+                     <button type="submit" class="submit button-primary">Submit</button>
+
+  					   </fieldset>
+  				      </form> <!-- Form End 
+
+               </div> <!-- Respond End 
+
+         	</div> <!-- end col-full
+         </div> <!-- end row comments 
+		</div> <!-- end comments-wrap 
+
+   </section> <!-- end content-->
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+    <div class="footer-main">
+
+        <div class="row">  
+
+           <div class="col-four tab-full mob-full footer-info">            
+
+             <h4>About My Blog</h4>
+
+                <p>
+                   Blog ini dibuat untuk memenuhi pembuatan tugas yang diberikan oleh dosen pembimbing Sistem Operasi kami.
+                   </p>
+
+           </div> <!-- end footer-info -->
+
+           <div class="col-two tab-1-3 mob-1-2 site-links">
+
+               <h4>Site Links</h4>
+
+               <ul>
+                   <li><a href="#">About Us</a></li>
+                     <li><a href="#">Blog</a></li>
+                     <li><a href="#">FAQ</a></li>
+                     <li><a href="#">Terms</a></li>
+                     <li><a href="#">Privacy Policy</a></li>
+                 </ul>
+
+           </div> <!-- end site-links -->  
+
+           <div class="col-two tab-1-3 mob-1-2 social-links">
+
+               <h4>Social</h4>
+
+               <ul>
+                   
+                     <li><a href="https://instagram.com/dindaaaptrii?igshid=YTQwZjQ0NmI0OA==">Instagram</a></li>
+                 </ul>
+                          
+           </div> <!-- end social links --> 
+
+           <!--<div class="col-four tab-1-3 mob-full footer-subscribe">
+
+               <h4>Subscribe</h4>
+
+               <p>Keep yourself updated. Subscribe to our newsletter.</p>
+
+               <div class="subscribe-form">
+           
+                   <form id="mc-form" class="group" novalidate="true">
+
+                         <input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="Type &amp; press enter" required=""> 
+            
+                        <input type="submit" name="subscribe" >
+            
+                        <label for="mc-email" class="subscribe-message"></label>
+         
+                     </form>
+
+               </div>	      		
+                          
+           </div> <!-- end subscribe -->         
+
+       </div> <!-- end row -->
+
+    </div> <!-- end footer-main -->
+
+   <div class="footer-bottom">
+       <div class="row">
+
+           <div class="col-twelve">
+               <div class="copyright">
+                 <span>© Copyright Dinda Putri Ramadani 2023</span> 
+                  <span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>		         	
+              </div>
+
+              <div id="go-top">
+                 <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon icon-arrow-up"></i></a>
+              </div>         
+           </div>
+
+       </div> 
+   </div> <!-- end footer-bottom -->  
+
+</footer>  
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="js/jquery-2.1.3.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/main.js"></script>
+
+</body>
+
+</html>
